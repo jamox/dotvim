@@ -25,7 +25,7 @@ set nohlsearch
 set incsearch
 set history=1000
 set undolevels=1000
-
+set term=screen-256color
 autocmd BufWritePre * :call <SID>StripWhite()
 fun! <SID>StripWhite()
     %s/[ \t]\+$//ge
