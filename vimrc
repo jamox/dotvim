@@ -1,6 +1,13 @@
-set expandtab
-set shiftwidth=2
 set tabstop=2
+set softtabstop=2
+set shiftwidth=2
+set shiftround
+set expandtab
+set autoindent
+
+"set expandtab
+"set shiftwidth=2
+"set tabstop=2
 
 filetype off
 
@@ -35,8 +42,8 @@ set list
 set listchars=tab:>-,trail:-,nbsp:%
 set nohlsearch
 set incsearch
-set history=1000
-set undolevels=1000
+set history=5000
+set undolevels=5000
 set term=screen-256color
 autocmd BufWritePre * :call <SID>StripWhite()
 fun! <SID>StripWhite()
@@ -113,9 +120,9 @@ noremap <Leader>E :qa!<CR>   " Quit all windows
  map <Leader>m <esc>:tabnext<CR>
 
  " Quicksave command
- noremap <C-Z> :update<CR>
- vnoremap <C-Z> <C-C>:update<CR>
- inoremap <C-Z> <C-O>:update<CR>
+ noremap <C-X> :update<CR>
+ vnoremap <C-X> <C-C>:update<CR>
+ inoremap <C-X> <C-O>:update<CR>
 
 " Clear the highlighted words from an hlsearch (can be visual clutter).
 nnoremap <silent> <leader><space> :nohlsearch<cr>:call clearmatches()<cr>
@@ -154,4 +161,7 @@ else
 endif
 
 
+" easier formatting of paragraphs
+vmap Q gq
+nmap Q gqap
 
