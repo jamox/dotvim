@@ -23,7 +23,7 @@ runtime bundle/vim-pathogen/autoload/pathogen.vim
 " Load matchit library. This lets % match if/elsif/else/end, open/close
 " XML tags, stuff like that, instead of just brackets and parens.
 runtime macros/matchit.vim
-set ofu=syntaxcomplete#Complete
+"set ofu=syntaxcomplete#Complete
 
 " Detect the OS
 if has('unix')
@@ -176,3 +176,5 @@ nmap Q gqap
 let g:rubycomplete_classes_in_global = 1
 let g:rubycomplete_buffer_loading = 1
 let g:rubycomplete_use_bundler = 1
+
+inoremap <c-x><c-]> <c-a>
