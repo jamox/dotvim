@@ -9,13 +9,21 @@ set autoindent
 "set shiftwidth=2
 "set tabstop=2
 
-filetype off
+set nocompatible
+syntax on             " Enable syntax highlighting
+" filetype on           " Enable filetype detection
+" filetype indent on    " Enable filetype-specific indenting
+" filetype plugin on    " Enable filetype-specific plugins
+
+" Not wanted:
+"filetype off
 
 runtime bundle/vim-pathogen/autoload/pathogen.vim
 
 " Load matchit library. This lets % match if/elsif/else/end, open/close
 " XML tags, stuff like that, instead of just brackets and parens.
 runtime macros/matchit.vim
+set ofu=syntaxcomplete#Complete
 
 " Detect the OS
 if has('unix')
@@ -30,7 +38,7 @@ call pathogen#helptags()
 
 filetype plugin indent on
 
-syntax enable
+" syntax enable
 set background=dark
 let g:solarized_termcolors=256
 colorscheme solarized
@@ -120,9 +128,9 @@ noremap <Leader>E :qa!<CR>   " Quit all windows
  map <Leader>m <esc>:tabnext<CR>
 
  " Quicksave command
- noremap <C-X> :update<CR>
- vnoremap <C-X> <C-C>:update<CR>
- inoremap <C-X> <C-O>:update<CR>
+" noremap <C-X> :update<CR>
+" vnoremap <C-X> <C-C>:update<CR>
+" inoremap <C-X> <C-O>:update<CR>
 
 " Clear the highlighted words from an hlsearch (can be visual clutter).
 nnoremap <silent> <leader><space> :nohlsearch<cr>:call clearmatches()<cr>
@@ -165,3 +173,6 @@ endif
 vmap Q gq
 nmap Q gqap
 
+let g:rubycomplete_classes_in_global = 1
+let g:rubycomplete_buffer_loading = 1
+let g:rubycomplete_use_bundler = 1
