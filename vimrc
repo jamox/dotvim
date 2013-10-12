@@ -6,6 +6,18 @@ filetype off
 
 runtime bundle/vim-pathogen/autoload/pathogen.vim
 
+" Load matchit library. This lets % match if/elsif/else/end, open/close
+" XML tags, stuff like that, instead of just brackets and parens.
+runtime macros/matchit.vim
+
+" Detect the OS
+if has('unix')
+    let s:uname = system('uname')
+    if s:uname == "Darwin\n"
+        let s:has_darwin = 1
+    endif
+endif
+
 call pathogen#incubate()
 call pathogen#helptags()
 
@@ -52,6 +64,14 @@ set noswapfile
 
 set tabstop=2
 set softtabstop=2
+" highlight matches, and use incremental search (like iTunes).
+set hlsearch
+set incsearch
+
+" Ignore case in search patterns unless an uppercase character is used
+" in the search, then pay attention to case.
+set ignorecase
+set smartcase
 set shiftwidth=2
 set shiftround
 set expandtab
@@ -96,3 +116,42 @@ noremap <Leader>E :qa!<CR>   " Quit all windows
  noremap <C-Z> :update<CR>
  vnoremap <C-Z> <C-C>:update<CR>
  inoremap <C-Z> <C-O>:update<CR>
+
+" Clear the highlighted words from an hlsearch (can be visual clutter).
+nnoremap <silent> <leader><space> :nohlsearch<cr>:call clearmatches()<cr>
+
+" Turn hlsearch on or off.
+nnoremap <leader>h :set hlsearch!<cr>
+
+" how the current mode (INSERT, REPLACE, VISUAL, paste, etc.)
+set showmode
+
+
+" copy and paste {{{
+
+" Key combo to toggle paste-mode
+set pastetoggle=,p
+
+" Duplicate current selection (best used for lines, but can be used
+" with any selection). Pastes duplicate at end of select region.
+vnoremap D y`>p
+
+" Key combos to copy/paste using Mac clipboard
+if exists('s:has_darwin')
+    nnoremap <leader>c "*yy
+    vnoremap <leader>c "*y
+    nnoremap <leader>v "*p
+    vnoremap <leader>v "*p
+    " Variants that set paste first. How to preserve paste if it's
+    " already set, though?
+    " nnoremap <leader>v :set paste<cr>"*p:set nopaste<cr>
+    " vnoremap <leader>v :set paste<cr>"*p:set nopaste<cr>
+else
+    nnoremap <leader>c :echoerr 'Only supported on Mac'<cr>
+    vnoremap <leader>c :echoerr 'Only supported on Mac'<cr>
+    nnoremap <leader>v :echoerr 'Only supported on Mac'<cr>
+    vnoremap <leader>v :echoerr 'Only supported on Mac'<cr>
+endif
+
+
+
