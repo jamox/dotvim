@@ -177,4 +177,20 @@ let g:rubycomplete_classes_in_global = 1
 let g:rubycomplete_buffer_loading = 1
 let g:rubycomplete_use_bundler = 1
 
-inoremap <c-x><c-]> <c-a>
+" inoremap <c-x><c-]> <c-a>
+
+map <Leader>rt :!/usr/local/bin/ctags --language-force=ruby --exclude=.git --exclude=log -R * `bundle show --paths`
+map <silent><Leader>ry :!ctags --extra=+f --exclude=.git --exclude=log -R * `gem environment gemdir`/gems/*<CR><CR>
+
+" Alt-right/left to navigate forward/backward in the tags stack
+ map <M-Left> <C-T>
+ map <M-Right> <C-]>
+
+" glist
+let Tlist_Ctags_Cmd = "/usr/local/bin/ctags"
+let Tlist_WinWidth = 50
+map <leader>ta :TlistToggle<cr>
+map <leader>bta :!/usr/local/bin/ctags -R .<CR>
+set tags=tags;/
+map <M-j> <C-]>
+map <M-k> <C-T>
