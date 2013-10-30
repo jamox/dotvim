@@ -198,3 +198,22 @@ map <m-k> <C-T>
 
 nnoremap <leader>. :CtrlPTag<cr>
 
+" easier moving of code blocks
+" Try to go into visual mode (v), thenselect several lines of code here and
+" then press ``>`` several times.
+vnoremap < <gv  " better indentation
+vnoremap > >gv  " better indentation
+
+
+
+" Rspec.vim mappings
+map <Leader>t :call RunCurrentSpecFile()<CR>
+map <Leader>s :call RunNearestSpec()<CR>
+map <Leader>l :call RunLastSpec()<CR>
+
+map <Leader>a :call RunAllSpecs()<CR>"
+let g:ragtag_global_maps = 1
+
+
+
+

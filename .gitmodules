@@ -100,3 +100,15 @@
 [submodule "bundle/tlib_vim"]
 	path = bundle/tlib_vim
 	url = https://github.com/tomtom/tlib_vim.git
+[submodule "bundle/vim-rake"]
+	path = bundle/vim-rake
+	url = git://github.com/tpope/vim-rake.git
+[submodule "bundle/vim-rspec"]
+	path = bundle/vim-rspec
+	url = https://github.com/thoughtbot/vim-rspec.git
+[submodule "bundle/vim-ragtag"]
+	path = bundle/vim-ragtag
+	url = https://github.com/tpope/vim-ragtag.git
+[submodule "vim-surround"]
+	path = vim-surround
+	url = https://github.com/tpope/vim-surround.git
