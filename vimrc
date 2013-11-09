@@ -35,6 +35,7 @@ endif
 
 call pathogen#incubate()
 call pathogen#helptags()
+call pathogen#infect()
 
 filetype plugin indent on
 
