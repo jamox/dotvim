@@ -118,15 +118,15 @@ noremap <Leader>E :qa!<CR>   " Quit all windows
 "  bind Ctrl+<movement> keys to move around the windows, instead of using
 " Ctrl+w + <movement>
 " Every unnecessary keystroke that can be saved is good for your health :)
- map <c-j> <c-w>j
- map <c-k> <c-w>k
- map <c-l> <c-w>l
- map <c-h> <c-w>h
+map <c-j> <c-w>j
+map <c-k> <c-w>k
+map <c-l> <c-w>l
+map <c-h> <c-w>h
 
-
+imap jj <Esc>
 " easier moving between tabs
- map <Leader>n <esc>:tabprevious<CR>
- map <Leader>m <esc>:tabnext<CR>
+map <Leader>n <esc>:tabprevious<CR>
+map <Leader>m <esc>:tabnext<CR>
 
  " Quicksave command
 " noremap <C-X> :update<CR>
