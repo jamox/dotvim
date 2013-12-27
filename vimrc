@@ -5,6 +5,7 @@ set shiftround
 set expandtab
 set autoindent
 
+
 "set expandtab
 "set shiftwidth=2
 "set tabstop=2
@@ -24,6 +25,9 @@ runtime bundle/vim-pathogen/autoload/pathogen.vim
 " XML tags, stuff like that, instead of just brackets and parens.
 runtime macros/matchit.vim
 "set ofu=syntaxcomplete#Complete
+
+let g:vimchant_spellcheck_lang = 'fi'
+
 
 " Detect the OS
 if has('unix')
@@ -241,3 +245,4 @@ set laststatus=2 statusline=%02n:%<%f\ %h%m%r%=%-14.(%l,%c%V%)\ %P
 
 
 
+"let g:html_indent_tags = '\|nav|address|'
