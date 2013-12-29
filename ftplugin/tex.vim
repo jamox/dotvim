@@ -1,5 +1,5 @@
-set textwidth=80
-set laststatus=2
+" set textwidth=80
+" set laststatus=2
 
-highlight OverLength ctermbg=red ctermfg=white guibg=#592929
-match OverLength /\%81v.\+/
+" highlight OverLength ctermbg=red ctermfg=white guibg=#592929
+" match OverLength /\%81v.\+/
